@@ -46,37 +46,37 @@ Hoàn thành trước khi xem bài của người khác hoặc bộ nhãn tham c
 
 ### Tình huống A — xe buýt hay xe van?
 
-- Ảnh và mã vật thể: [Điền Tên ảnh và ID vật thể, vd: image_01.jpg - ID 5]
-- Dấu hiệu nhìn thấy: [Điền dấu hiệu, vd: Chỉ thấy phần đầu xe hình hộp, phần thân bị khuất]
-- Quy tắc áp dụng: Dựa theo mục 2, `bus` có thân dài/nhiều cửa sổ, `van` là thân hộp nhỏ/kín.
-- Quyết định: [Điền lớp bạn đã chọn, vd: van]
-- Nếu vẫn thiếu bằng chứng, bạn sẽ làm gì? Phóng to 100%, nếu vẫn không rõ thì đặt `review_state = needs_review` và ghi chú lý do.
+- Ảnh và mã vật thể: drive_038.jpg - ID 15
+- Dấu hiệu nhìn thấy: Xe có hình hộp nhưng thân hơi dài, góc chụp từ phía sau nên tôi không đếm được có bao nhiêu cửa sổ hay hàng ghế bên trong.
+- Quy tắc áp dụng: Dựa theo mục 2, `bus` phải có thân dài, nhiều cửa sổ hoặc hàng ghế rõ ràng. `van` thì có thân hộp nhỏ và kín hơn.
+- Quyết định: van (Do kích thước tổng thể trông khá gọn gàng, không đủ dài như xe buýt thông thường).
+- Nếu vẫn thiếu bằng chứng, bạn sẽ làm gì? Tôi sẽ phóng to lên 100% để rọi xem có dãy ghế nào không. Nếu vẫn không chắc chắn, tôi sẽ đánh dấu `review_state = needs_review` để hỏi thêm thay vì tự đoán.
 
 ### Tình huống B — xe tải hay xe van/ô tô con?
 
-- Ảnh và mã vật thể: [Điền Tên ảnh và ID vật thể]
-- Dấu hiệu nhìn thấy: [Điền dấu hiệu, vd: Xe bán tải nhưng không có thùng hàng chuyên dụng rõ ràng]
-- Quy tắc áp dụng: Xe bán tải dùng như xe con thuộc `car`. `truck` phải có thùng/ben rõ ràng. `van` kín một khối.
-- Quyết định: [Điền lớp bạn đã chọn]
-- Nếu vẫn thiếu bằng chứng, bạn sẽ làm gì? Đặt `review_state = needs_review` và ghi chú lại.
+- Ảnh và mã vật thể: drive_008.jpg - ID 9
+- Dấu hiệu nhìn thấy: Một chiếc xe bán tải đang chạy trên đường, có thùng phía sau nhưng không có vẻ gì là chở hàng nặng hay có thiết bị công vụ.
+- Quy tắc áp dụng: Xe bán tải dùng như xe con thì xếp vào lớp `car`. `truck` chỉ dùng khi có thùng, ben hoặc thiết bị công vụ rõ ràng.
+- Quyết định: car
+- Nếu vẫn thiếu bằng chứng, bạn sẽ làm gì? Tôi sẽ đặt `review_state = needs_review` và chụp ảnh lại để trao đổi với Lab Coach.
 
 ### Tình huống C — bị che, bị mép ảnh cắt hay không đủ bằng chứng?
 
-- Ảnh và mã vật thể: [Điền Tên ảnh và ID vật thể]
-- Dấu hiệu nhìn thấy khi phóng 100%: [Điền dấu hiệu, vd: Ô tô con bị một cái cây che nửa trước, phần bị mép ảnh cắt hay không]
-- Giá trị `visibility`: [Điền `clear`, `occluded`, hoặc `unclear`]
-- Giá trị `boundary`: [Điền `inside` hoặc `truncated`]
-- Trạng thái `review_state`: [Điền `confident` hoặc `needs_review`]
-- Lý do: [Giải thích vì sao bạn chọn giá trị trên, vd: Dù bị che một phần nhưng vẫn đủ dấu hiệu nhận dạng ô tô con nên chọn confident]
+- Ảnh và mã vật thể: drive_033.jpg - ID 21
+- Dấu hiệu nhìn thấy khi phóng 100%: Một chiếc ô tô con bị mép ảnh bên trái cắt mất phần đầu, chỉ nhìn thấy từ cửa trước đến đuôi, đồng thời bị cột điện che một phần thân.
+- Giá trị `visibility`: occluded
+- Giá trị `boundary`: truncated
+- Trạng thái `review_state`: confident
+- Lý do: Mặc dù xe vừa bị cắt ở mép ảnh (truncated) vừa bị cột điện che (occluded), nhưng hình dáng phần đuôi hatchback hiển thị đủ rõ để tôi tự tin chốt đây là ô tô con (confident).
 
 ## 6. Xác nhận tự kiểm tra
 
-- [ ] Đã rà đủ bốn ảnh.
-- [ ] Đã kiểm vật thể thiếu và trùng.
-- [ ] Đã kiểm lớp và hình học từng hộp.
-- [ ] Mỗi hộp có đủ ba thuộc tính.
-- [ ] Đã xử lý mọi hộp `needs_review`.
-- [ ] Đã hoàn thành ba tình huống trước khi xem nguồn đối chiếu.
+- [x] Đã rà đủ bốn ảnh.
+- [x] Đã kiểm vật thể thiếu và trùng.
+- [x] Đã kiểm lớp và hình học từng hộp.
+- [x] Mỗi hộp có đủ ba thuộc tính.
+- [x] Đã xử lý mọi hộp `needs_review`.
+- [x] Đã hoàn thành ba tình huống trước khi xem nguồn đối chiếu.
 - [ ] Nếu làm theo cặp, hai người đã xuất bài độc lập trước khi trao đổi.
-- [ ] Nếu làm cá nhân, bài riêng đã được kiểm trước khi nhận bộ tham chiếu.
-- [ ] Số vật thể thực tế: 74 — 40–60 là mục tiêu khối lượng, không phải điểm cắt.
+- [x] Nếu làm cá nhân, bài riêng đã được kiểm trước khi nhận bộ tham chiếu.
+- [x] Số vật thể thực tế: 74 — 40–60 là mục tiêu khối lượng, không phải điểm cắt.
